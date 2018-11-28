@@ -8,7 +8,7 @@ public class BruteRasterImage implements Image {
 
     private int width;
     private int height;
-    private Pixel[][] pixels;
+    private Color[][] pixels;
 
     /**
      * Creates a monochromatic image of given size.
@@ -20,9 +20,10 @@ public class BruteRasterImage implements Image {
     public BruteRasterImage(Color color, int width, int height){
         this.width = width;
         this.height = height;
+        createRepresentation();
         for(int x=0; x<this.getHeight(); x++){
             for(int y=0; y<this.getWidth(); y++){
-                pixels[x][y]= new Pixel(x,y,color);
+                pixels[x][y]= color;
             }
         }
     }
@@ -40,9 +41,10 @@ public class BruteRasterImage implements Image {
         requiresRectangularMatrix(colors);
         this.height = colors.length;
         this.width = colors[0].length;
+        createRepresentation();
         for(int x=0; x<this.getHeight(); x++){
             for(int y=0; y<this.getWidth(); y++){
-                pixels[x][y]= new Pixel(x,y,colors[x][y]);
+                pixels[x][y]= colors[x][y];
             }
         }
     }
@@ -53,6 +55,7 @@ public class BruteRasterImage implements Image {
      */
     private void createRepresentation(){
         //TODO: implémenter cette fonction
+        this.pixels= new Color[this.getHeight()][this.getWidth()];
     }
 
     /**
@@ -61,12 +64,12 @@ public class BruteRasterImage implements Image {
      * @param x,y the place of the pixel in the image
      */
     public void setPixelColor(int x, int y, Color color){
-        pixels[x][y]= new Pixel(x, y, color);
+        pixels[x][y]= color;
     }
 
     @Override
     public Color getPixelColor(int x, int y) {
-        return pixels[x][y].getColor();
+        return pixels[x][y];
     }
 
 
