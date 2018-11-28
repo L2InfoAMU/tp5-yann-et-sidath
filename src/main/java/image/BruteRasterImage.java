@@ -47,6 +47,14 @@ public class BruteRasterImage implements Image {
         }
     }
 
+
+    /**
+     * Allocate the matrix representing the image
+     */
+    private void createRepresentation(){
+        //TODO: implémenter cette fonction
+    }
+
     /**
      * Allows to change the color of a given pixel
      * @param color the new color
