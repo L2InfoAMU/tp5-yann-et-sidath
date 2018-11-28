@@ -30,6 +30,7 @@ public class BruteRasterImage implements Image {
 
     /**
      * Creates an image from a given matrix.
+     *
      * @param colors the matrix from which the image is created
      * @throws IllegalArgumentException if the matrix is not rectangular or if it has an empty row or column
      * @throws NullPointerException if the matrix has null parts
@@ -49,7 +50,6 @@ public class BruteRasterImage implements Image {
         }
     }
 
-
     /**
      * Allocate the matrix representing the image
      */
@@ -60,6 +60,7 @@ public class BruteRasterImage implements Image {
 
     /**
      * Allows to change the color of a given pixel
+     *
      * @param color the new color
      * @param x,y the place of the pixel in the image
      */
@@ -72,9 +73,9 @@ public class BruteRasterImage implements Image {
         return pixels[x][y];
     }
 
-
     /**
      * Allows to change the color of the pixels according to a matrix
+     *
      * @param pixels the matrix
      */
     private void setPixelsColor(Color[][] pixels){
@@ -87,6 +88,7 @@ public class BruteRasterImage implements Image {
 
     /**
      * Allows to change the color of all pixels into one
+     *
      * @param color the new color
      */
     private void setPixelsColor(Color color){
@@ -109,6 +111,7 @@ public class BruteRasterImage implements Image {
 
     /**
      * Allows to change the width of the image
+     *
      * @param width the new width of the image
      */
     protected void setWidth(int width){
@@ -117,6 +120,7 @@ public class BruteRasterImage implements Image {
 
     /**
      * Allows to change the height of the image.
+     *
      * @param height the new height of the image
      */
     protected void setHeight(int height){
