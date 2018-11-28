@@ -47,9 +47,43 @@ public class BruteRasterImage implements Image {
         }
     }
 
+    /**
+     * Allows to change the color of a given pixel
+     * @param color the new color
+     * @param x,y the place of the pixel in the image
+     */
+    public void setPixelColor(int x, int y, Color color){
+        pixels[x][y]= new Pixel(x, y, color);
+    }
+
     @Override
     public Color getPixelColor(int x, int y) {
         return pixels[x][y].getColor();
+    }
+
+
+    /**
+     * Allows to change the color of the pixels according to a matrix
+     * @param pixels the matrix
+     */
+    private void setPixelsColor(Color[][] pixels){
+        for (int x=0; x<this.getHeight(); x++){
+            for (int y=0; y<this.getWidth(); y++){
+                this.setPixelColor(x,y,pixels[x][y]);
+            }
+        }
+    }
+
+    /**
+     * Allows to change the color of all pixels into one
+     * @param color the new color
+     */
+    private void setPixelsColor(Color color){
+        for (int x=0; x<this.getHeight(); x++){
+            for (int y=0; y<this.getWidth(); y++){
+                this.setPixelColor(x,y,color);
+            }
+        }
     }
 
     @Override
