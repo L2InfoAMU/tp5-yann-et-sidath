@@ -21,8 +21,8 @@ public class BruteRasterImage implements Image {
         this.width = width;
         this.height = height;
         createRepresentation();
-        for(int x=0; x<this.getHeight(); x++){
-            for(int y=0; y<this.getWidth(); y++){
+        for(int x=0; x<this.getWidth(); x++){
+            for(int y=0; y<this.getHeight(); y++){
                 pixels[x][y]= color;
             }
         }
@@ -40,11 +40,11 @@ public class BruteRasterImage implements Image {
         requiresNonNull(colors);
         requiresNonZeroDimensions(colors);
         requiresRectangularMatrix(colors);
-        this.height = colors.length;
-        this.width = colors[0].length;
+        this.width = colors.length;
+        this.height = colors[0].length;
         createRepresentation();
-        for(int x=0; x<this.getHeight(); x++){
-            for(int y=0; y<this.getWidth(); y++){
+        for(int x=0; x<this.getWidth(); x++){
+            for(int y=0; y<this.getHeight(); y++){
                 pixels[x][y]= colors[x][y];
             }
         }
@@ -55,7 +55,7 @@ public class BruteRasterImage implements Image {
      */
     private void createRepresentation(){
         //TODO: implémenter cette fonction
-        this.pixels= new Color[this.getHeight()][this.getWidth()];
+        this.pixels= new Color[this.getWidth()][this.getHeight()];
     }
 
     /**
@@ -79,8 +79,8 @@ public class BruteRasterImage implements Image {
      * @param pixels the matrix
      */
     private void setPixelsColor(Color[][] pixels){
-        for (int x=0; x<this.getHeight(); x++){
-            for (int y=0; y<this.getWidth(); y++){
+        for (int x=0; x<this.getWidth(); x++){
+            for (int y=0; y<this.getHeight(); y++){
                 this.setPixelColor(x,y,pixels[x][y]);
             }
         }
@@ -92,8 +92,8 @@ public class BruteRasterImage implements Image {
      * @param color the new color
      */
     private void setPixelsColor(Color color){
-        for (int x=0; x<this.getHeight(); x++){
-            for (int y=0; y<this.getWidth(); y++){
+        for (int x=0; x<this.getWidth(); x++){
+            for (int y=0; y<this.getHeight(); y++){
                 this.setPixelColor(x,y,color);
             }
         }
