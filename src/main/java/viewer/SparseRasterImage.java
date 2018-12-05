@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class SparseRasterImage extends RasterImage {
 
-    HashMap<Point, Color> colors;
+    HashMap<Point,Color> colors;
 
 
     public SparseRasterImage(Color color, int width, int height){
@@ -23,7 +23,7 @@ public class SparseRasterImage extends RasterImage {
     }
 
     public void createRepresentation(){
-        this.colors = new HashMap<>(this.getWidth()*this.getHeight());
+        this.colors = new HashMap<>();
     }
 
     @Override
