@@ -92,24 +92,5 @@ public class BruteRasterImage extends RasterImage {
         }
     }
 
-    /*@Override
-    public int getWidth() {
-        return this.width;
-    }
-
-    @Override
-    public int getHeight() {
-        return this.height;
-    }
-
-
-    protected void setWidth(int width){
-        this.width= width;
-    }
-
-
-    protected void setHeight(int height){
-        this.height= height;
-    }*/
 
 }

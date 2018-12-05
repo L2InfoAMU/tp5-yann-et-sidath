@@ -106,21 +106,4 @@ public class PaletteRasterImage extends RasterImage {
         }
     }
 
-    /*@Override
-    public int getWidth() {
-        return super.getWidth();
-    }
-
-    @Override
-    public int getHeight() {
-        return super.getHeight();
-    }
-
-    protected void setWidth(int width){
-        super.setWidth(width);
-    }
-
-    protected void setHeight(int height){
-        super.setHeight(height);
-    }*/
 }
