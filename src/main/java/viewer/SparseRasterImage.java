@@ -23,7 +23,7 @@ public class SparseRasterImage extends RasterImage {
     }
 
     public void createRepresentation(){
-        this.colors = new HashMap<>();
+        this.colors = new HashMap<>(this.getWidth()*this.getHeight());
     }
 
     @Override
