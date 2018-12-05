@@ -2,9 +2,7 @@ package image;
 
 import javafx.scene.paint.Color;
 
-import static util.Matrices.*;
-
-public class BruteRasterImage implements Image {
+public class BruteRasterImage extends RasterImage {
 
     private int width;
     private int height;
@@ -18,8 +16,7 @@ public class BruteRasterImage implements Image {
      * @param width the width of the image
      */
     public BruteRasterImage(Color color, int width, int height){
-        this.width = width;
-        this.height = height;
+        super(width, height);
         createRepresentation();
         for(int x=0; x<this.getWidth(); x++){
             for(int y=0; y<this.getHeight(); y++){
@@ -37,11 +34,7 @@ public class BruteRasterImage implements Image {
      */
 
     public BruteRasterImage(Color[][] colors){
-        requiresNonNull(colors);
-        requiresNonZeroDimensions(colors);
-        requiresRectangularMatrix(colors);
-        this.width = colors.length;
-        this.height = colors[0].length;
+        super(colors);
         createRepresentation();
         for(int x=0; x<this.getWidth(); x++){
             for(int y=0; y<this.getHeight(); y++){
@@ -99,7 +92,7 @@ public class BruteRasterImage implements Image {
         }
     }
 
-    @Override
+    /*@Override
     public int getWidth() {
         return this.width;
     }
@@ -109,21 +102,14 @@ public class BruteRasterImage implements Image {
         return this.height;
     }
 
-    /**
-     * Allows to change the width of the image
-     *
-     * @param width the new width of the image
-     */
+
     protected void setWidth(int width){
         this.width= width;
     }
 
-    /**
-     * Allows to change the height of the image.
-     *
-     * @param height the new height of the image
-     */
+
     protected void setHeight(int height){
         this.height= height;
-    }
+    }*/
+
 }

@@ -4,9 +4,9 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
-import static util.Matrices.*;
 
-public class PaletteRasterImage implements Image {
+
+public class PaletteRasterImage extends RasterImage {
 
     List<Color> colors;
     int[][] pixels;
@@ -22,8 +22,7 @@ public class PaletteRasterImage implements Image {
      */
 
     public PaletteRasterImage(Color color, int width, int height){
-        this.width = width;
-        this.height = height;
+        super(width, height);
         createRepresentation();
         this.colors.add(color);
         for (int x=0; x<this.getWidth(); x++){
@@ -39,11 +38,7 @@ public class PaletteRasterImage implements Image {
      * @param pixels the matrix used to create the image
      */
     public PaletteRasterImage(Color[][] pixels){
-        requiresNonNull(pixels);
-        requiresNonZeroDimensions(pixels);
-        requiresRectangularMatrix(pixels);
-        this.width = pixels.length;
-        this.height = pixels[0].length;
+        super(pixels);
         createRepresentation();
         for (int x = 0; x < this.getWidth(); x++){
             for (int y = 0; y< this.getHeight(); y++){
@@ -111,31 +106,21 @@ public class PaletteRasterImage implements Image {
         }
     }
 
-    @Override
+    /*@Override
     public int getWidth() {
-        return this.width;
+        return super.getWidth();
     }
 
     @Override
     public int getHeight() {
-        return this.height;
+        return super.getHeight();
     }
 
-    /**
-     * Allows to change the width of the image
-     *
-     * @param width the new width of the image
-     */
     protected void setWidth(int width){
-        this.width= width;
+        super.setWidth(width);
     }
 
-    /**
-     * Allows to change the height of the image.
-     *
-     * @param height the new height of the image
-     */
     protected void setHeight(int height){
-        this.height= height;
-    }
+        super.setHeight(height);
+    }*/
 }
